@@ -16,15 +16,10 @@ add_executable(sono "")
 target_sources(sono
 	PRIVATE
 		main.cpp
-		IParser.hpp
-		ParserFile.cpp
-		ParserFile.hpp
-		ParserFolder.cpp
-		ParserFolder.hpp
-		MainWindow/MainWindow.cpp
-		MainWindow/MainWindow.hpp
-		MainWindow/MainWindow.ui
 )
+
+add_subdirectory(./parser)
+add_subdirectory(./ui)
 
 target_link_libraries(sono PRIVATE Qt5::Widgets)
 

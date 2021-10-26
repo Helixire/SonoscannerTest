@@ -1,0 +1,9 @@
+target_sources(sono 
+	PRIVATE
+	MainWindow/MainWindow.cpp
+	MainWindow/MainWindow.hpp
+	MainWindow/MainWindow.ui
+	IUi.hpp
+	QtUi.cpp
+	QtUi.hpp
+)

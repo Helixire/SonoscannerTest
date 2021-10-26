@@ -19,18 +19,12 @@ add_executable(
   ""
 )
 
-message("${PROJECT_SOURCE_DIR}/test/data")
-
 add_custom_command(TARGET sono_test POST_BUILD
 	COMMAND ${CMAKE_COMMAND} -E copy_directory
 	"${PROJECT_SOURCE_DIR}/test/data"
 	"$<TARGET_FILE_DIR:sono_test>/data")
 
-target_sources(sono_test
-	PRIVATE
-	ParserFileTest.cpp
-	ParserFolderTest.cpp
-)
+add_subdirectory(./parser)
 
 target_link_libraries(
   sono_test

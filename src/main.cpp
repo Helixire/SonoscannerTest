@@ -1,10 +1,11 @@
-#include "MainWindow/MainWindow.hpp"
+#include <memory>
 
-#include <QApplication>
+#include "ui/QtUi.hpp"
 
 int main(int argc, char *argv[]) {
-  QApplication a(argc, argv);
-  MainWindow w;
-  w.show();
-  return a.exec();
+  std::unique_ptr<IUi> ui(new QtUi(argc, argv));
+
+  while (!ui->shouldStop()) {
+    ui->processEvent();
+  }
 }
